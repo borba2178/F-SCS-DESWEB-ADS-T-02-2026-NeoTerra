@@ -1,0 +1,61 @@
+ORÇAMENTO DE HOSPEDAGEM E DOMÍNIOS (Vercel, Netlify e Railway)
+
+--- 1. Vercel (Hobby - Gratuito) ---
+- Tipo de Plano: Gratuito
+- Preço Mensal: R$ 0,00 / mês
+- Sites: Até 200 projetos
+- Armazenamento / Banda: 100 GB de banda/mês
+- Domínio (x3): 3 Domínios
+- Registro Anual (3 domínios): R$ 120,00 (3x R$ 40,00)
+- Hospedagem (Mensal): R$ 0,00 / mês
+- Total Anual: R$ 120,00 (só o registro)
+
+--- 2. Vercel (Pro - Pago) ---
+- Tipo de Plano: Pago
+- Preço Mensal: R$ 110,00 / mês
+- Sites: Ilimitados
+- Armazenamento / Banda: 1 TB (Banda inclusa)
+- Domínio (x3): 3 Domínios
+- Registro Anual (3 domínios): R$ 120,00 (3x R$ 40,00)
+- Hospedagem (Mensal): R$ 110,00 / mês
+- Total Anual: R$ 1.440,00
+
+--- 3. Netlify (Free - Gratuito) ---
+- Tipo de Plano: Gratuito
+- Preço Mensal: R$ 0,00 / mês
+- Sites: Ilimitados
+- Armazenamento / Banda: ~15 GB de banda (300 créditos)
+- Domínio (x3): 3 Domínios
+- Registro Anual (3 domínios): R$ 120,00 (3x R$ 40,00)
+- Hospedagem (Mensal): R$ 0,00 / mês
+- Total Anual: R$ 120,00 (só o registro)
+
+--- 4. Netlify (Pro - Pago) ---
+- Tipo de Plano: Pago
+- Preço Mensal: R$ 110,00 / mês
+- Sites: Ilimitados
+- Armazenamento / Banda: ~150 GB (3.000 créditos)
+- Domínio (x3): 3 Domínios
+- Registro Anual (3 domínios): R$ 120,00 (3x R$ 40,00)
+- Hospedagem (Mensal): R$ 110,00 / mês
+- Total Anual: R$ 1.440,00
+
+--- 5. Railway (Hobby - Gratuito/Consumo) ---
+- Tipo de Plano: Gratuito/Consumo
+- Preço Mensal: R$ 0,00 a R$ 27,50 / mês
+- Sites: Até 3 por projeto
+- Armazenamento / Banda: Baseado em recursos (vCPU/RAM)
+- Domínio (x3): 3 Domínios
+- Registro Anual (3 domínios): R$ 120,00 (3x R$ 40,00)
+- Hospedagem (Mensal): R$ 0,00 a R$ 27,50 / mês
+- Total Anual: R$ 120,00 a R$ 450,00
+
+--- 6. Railway (Pro - Pago) ---
+- Tipo de Plano: Pago
+- Preço Mensal: Variável (Sob demanda)
+- Sites: Múltiplos
+- Armazenamento / Banda: Conforme uso de infraestrutura
+- Domínio (x3): 3 Domínios
+- Registro Anual (3 domínios): R$ 120,00 (3x R$ 40,00)
+- Hospedagem (Mensal): Variável / mês
+- Total Anual: Variável

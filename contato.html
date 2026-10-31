@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | NeoTerra</title>
+  <meta name="description" content="Envie sugestões e mensagens para a equipe NeoTerra.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="container cabecalho__topo">
+      <a class="marca" href="index.html" aria-label="NeoTerra, página inicial">
+        <img src="img/favicon.png" alt="" width="44" height="48">
+        NeoTerra
+      </a>
+      <a class="botao botao--cta" href="calculadora.html">Testar a Calculadora</a>
+    </div>
+    <nav class="menu" aria-label="Principal">
+      <ul class="container">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="quem-somos.html">Quem somos</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="tipos-renovaveis.html">Tipos renováveis</a></li>
+        <li><a href="impacto-renovavel.html">Impacto renovável</a></li>
+        <li><a href="tipos-nao-renovaveis.html">Tipos não renováveis</a></li>
+        <li><a href="impacto-nao-renovavel.html">Impacto não renovável</a></li>
+        <li><a href="calculadora.html">Calculadora</a></li>
+        <li><a href="guia-acoes.html">Guia de ações</a></li>
+        <li><a href="contato.html" aria-current="page">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <div class="pagina-topo">
+      <div class="container">
+        <p class="migalhas"><a href="index.html">Início</a> / Contato</p>
+        <h1>Contato</h1>
+        <p class="lead">Tem uma sugestão, dúvida ou mensagem? Escreva para nós.</p>
+      </div>
+    </div>
+
+    <section class="secao" aria-labelledby="t-form">
+      <div class="container">
+        <h2 id="t-form">Envie sua mensagem</h2>
+        <p>Os campos sem a indicação "opcional" são obrigatórios.</p>
+        <form class="formulario" action="#" method="post" aria-label="Formulário de contato">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" required minlength="3" autocomplete="name">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+          <label for="tel">Telefone (opcional)</label>
+          <input type="tel" id="tel" name="tel" pattern="\(?\d{2}\)?\s?9?\d{4}-?\d{4}" title="Use o formato (11) 91234-5678" placeholder="(11) 91234-5678" autocomplete="tel">
+          <span class="ajuda">Formato: (11) 91234-5678</span>
+          <label for="assunto">Assunto</label>
+          <select id="assunto" name="assunto" required>
+            <option value="">Selecione...</option>
+            <option>Sugestão</option>
+            <option>Dúvida</option>
+            <option>Elogio</option>
+            <option>Outro</option>
+          </select>
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required minlength="10"></textarea>
+          <button class="botao botao--cta" type="submit">Enviar mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div>
+          <img class="rodape__logo" src="img/logo-neoterra.png" alt="Logotipo da NeoTerra: sol e folhas" width="144" height="140" loading="lazy">
+          <p>Energia, consciência, futuro.</p>
+        </div>
+        <div>
+          <h2>Páginas</h2>
+          <ul>
+            <li><a href="quem-somos.html">Quem somos</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="guia-acoes.html">Guia de ações</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Fontes de imagens e dados</h2>
+          <ul>
+            <li><a href="https://unsplash.com/">Unsplash</a></li>
+            <li><a href="https://commons.wikimedia.org/">Wikimedia Commons</a></li>
+            <li><a href="https://lucide.dev/">Lucide</a></li>
+            <li><a href="https://agenciabrasil.ebc.com.br/">Agência Brasil</a></li>
+            <li><a href="https://www.iea.org/">IEA</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="rodape__fim">© 2026 NeoTerra. Projeto de Desenvolvimento Web (prof. Paulo Fratta) por Pedro Henrique Cardoso Vidal, Gabriel Borba e Marco Antonio Dias Lima.</p>
+    </div>
+  </footer>
+</body>
+</html>

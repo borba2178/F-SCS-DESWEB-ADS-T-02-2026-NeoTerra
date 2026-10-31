@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Carbono | NeoTerra</title>
+  <meta name="description" content="Informe seus hábitos de transporte, energia e gás e veja a estimativa de poluentes que você emite por mês.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="container cabecalho__topo">
+      <a class="marca" href="index.html" aria-label="NeoTerra, página inicial">
+        <img src="img/favicon.png" alt="" width="44" height="48">
+        NeoTerra
+      </a>
+      <a class="botao botao--cta" href="calculadora.html">Testar a Calculadora</a>
+    </div>
+    <nav class="menu" aria-label="Principal">
+      <ul class="container">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="quem-somos.html">Quem somos</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="tipos-renovaveis.html">Tipos renováveis</a></li>
+        <li><a href="impacto-renovavel.html">Impacto renovável</a></li>
+        <li><a href="tipos-nao-renovaveis.html">Tipos não renováveis</a></li>
+        <li><a href="impacto-nao-renovavel.html">Impacto não renovável</a></li>
+        <li><a href="calculadora.html" aria-current="page">Calculadora</a></li>
+        <li><a href="guia-acoes.html">Guia de ações</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <div class="pagina-topo">
+      <div class="container">
+        <p class="migalhas"><a href="index.html">Início</a> / Calculadora de Carbono</p>
+        <h1>Calculadora de Carbono</h1>
+        <p class="lead">Descubra quantos poluentes você emite com os seus hábitos.</p>
+      </div>
+    </div>
+
+    <section class="secao" aria-labelledby="t-calc">
+      <div class="container">
+        <h2 id="t-calc">Calcule a sua emissão</h2>
+        <div class="dois-colunas">
+          <form id="form-calc" class="formulario" aria-describedby="calc-ajuda">
+            <p id="calc-ajuda">Preencha com valores aproximados. Deixe 0 no que você não usa.</p>
+            <label for="km">Distância de carro por semana (km)</label>
+            <input type="number" id="km" name="km" min="0" max="5000" step="1" value="0" required>
+            <label for="comb">Combustível do carro</label>
+            <select id="comb" name="comb">
+              <option value="gasolina">Gasolina</option>
+              <option value="etanol">Etanol</option>
+              <option value="diesel">Diesel</option>
+            </select>
+            <label for="kwh">Consumo de energia elétrica por mês (kWh)</label>
+            <input type="number" id="kwh" name="kwh" min="0" max="5000" step="1" value="0" required>
+            <span class="ajuda">Está na sua conta de luz.</span>
+            <label for="gas">Botijões de gás de cozinha (13 kg) por mês</label>
+            <input type="number" id="gas" name="gas" min="0" max="20" step="0.5" value="0" required>
+            <button class="botao botao--cta" type="submit">Calcular</button>
+          </form>
+          <div>
+            <h3>Resultado</h3>
+            <p id="calc-vazio">Preencha o formulário para ver a estimativa.</p>
+            <div id="calc-resultado" class="resultado" role="status" aria-live="polite" hidden></div>
+            <p class="ajuda" style="font-size:var(--t-sm)">Estimativa educativa, em CO₂ equivalente, calculada com fatores médios de emissão. O valor real varia conforme o veículo, a região e a forma de geração da energia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div>
+          <img class="rodape__logo" src="img/logo-neoterra.png" alt="Logotipo da NeoTerra: sol e folhas" width="144" height="140" loading="lazy">
+          <p>Energia, consciência, futuro.</p>
+        </div>
+        <div>
+          <h2>Páginas</h2>
+          <ul>
+            <li><a href="quem-somos.html">Quem somos</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="guia-acoes.html">Guia de ações</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Fontes de imagens e dados</h2>
+          <ul>
+            <li><a href="https://unsplash.com/">Unsplash</a></li>
+            <li><a href="https://commons.wikimedia.org/">Wikimedia Commons</a></li>
+            <li><a href="https://lucide.dev/">Lucide</a></li>
+            <li><a href="https://agenciabrasil.ebc.com.br/">Agência Brasil</a></li>
+            <li><a href="https://www.iea.org/">IEA</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="rodape__fim">© 2026 NeoTerra. Projeto de Desenvolvimento Web (prof. Paulo Fratta) por Pedro Henrique Cardoso Vidal, Gabriel Borba e Marco Antonio Dias Lima.</p>
+    </div>
+  </footer>
+  <script src="js/calculadora.js"></script>
+</body>
+</html>

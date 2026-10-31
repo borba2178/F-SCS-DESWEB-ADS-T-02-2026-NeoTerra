@@ -1,0 +1,274 @@
+/* ==========================================================
+   NeoTerra — style.css (folha de estilo padrão do site)
+   Usada por todas as páginas. Seções:
+   1. Tokens  2. Base  3. Layout  4. Botões  5. Cabeçalho
+   6. Hero  7. Seções da home  8. Formulário  9. Rodapé
+   10. Responsivo e acessibilidade
+   ========================================================== */
+
+/* 1. TOKENS ------------------------------------------------ */
+:root {
+  /* Paleta oficial do projeto */
+  --verde: #176B45;
+  --amarelo: #F4C542;
+  --laranja: #E98235;
+  --azul: #287FB8;
+
+  /* Derivadas (garantem contraste mínimo AA) */
+  --verde-escuro: #0E4A30;
+  --azul-texto: #1E6C9E;      /* azul para links em texto pequeno */
+  --verde-claro: #E3F1E6;
+  --fundo: #F5F9F3;
+  --branco: #FFFFFF;
+  --texto: #1C2B24;
+  --texto-suave: #4A5C53;
+  --borda: #CFE0D4;
+
+  /* Tipografia */
+  --fonte-titulo: "Montserrat", "Segoe UI", Arial, sans-serif;
+  --fonte-texto: "Open Sans", "Segoe UI", Arial, sans-serif;
+
+  --t-sm: 0.875rem;
+  --t-base: 1.0625rem;
+  --t-lg: 1.25rem;
+  --t-xl: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --t-2xl: clamp(2rem, 1.5rem + 2.4vw, 3rem);
+  --t-hero: clamp(2.4rem, 1.6rem + 4vw, 4.25rem);
+
+  /* Espaçamento e forma */
+  --espaco: clamp(3.5rem, 2.5rem + 5vw, 6.5rem);
+  --largura: 72rem;
+  --raio: 0.75rem;
+}
+
+/* 2. BASE -------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  font-size: var(--t-base);
+  line-height: 2;
+}
+img, svg { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 {
+  margin: 0 0 0.6em;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--verde);
+  text-wrap: balance;
+}
+h1 { font-size: var(--t-hero); }
+h2 { font-size: var(--t-2xl); }
+h3 { font-size: var(--t-lg); letter-spacing: -0.01em; }
+p { margin: 0 0 1em; max-width: 65ch; }
+a { color: var(--azul-texto); text-underline-offset: 0.2em; }
+a:hover { color: var(--verde); }
+ul { margin: 0; padding: 0; list-style: none; }
+
+/* 3. LAYOUT ------------------------------------------------ */
+.container { width: min(100% - 2.5rem, var(--largura)); margin-inline: auto; }
+p.container { max-width: none; }
+.secao { padding-block: var(--espaco); }
+.secao--branca { background: var(--branco); }
+.secao--verde { background: var(--verde); color: var(--branco); }
+.secao--verde h2 { color: var(--branco); }
+.lead { font-size: var(--t-lg); color: var(--texto-suave); }
+
+/* 4. BOTÕES ------------------------------------------------ */
+.botao {
+  display: inline-block;
+  padding: 0.85em 1.5em;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.botao--cta { background: var(--laranja); color: var(--texto); }
+.botao--cta:hover { background: var(--amarelo); color: var(--texto); }
+.botao--contorno { border-color: currentColor; color: var(--branco); }
+.botao--contorno:hover { background: var(--branco); color: var(--verde); }
+
+/* 5. CABEÇALHO --------------------------------------------- */
+.pular-conteudo {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  padding: 0.6rem 1rem; background: var(--amarelo); color: var(--texto);
+  font-weight: 700; border-radius: var(--raio);
+}
+.pular-conteudo:focus { top: 1rem; }
+
+.cabecalho { background: var(--fundo); border-bottom: 1px solid var(--borda); }
+.cabecalho__topo {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding-block: 0.75rem;
+}
+.marca {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-family: var(--fonte-titulo); font-weight: 800; font-size: 1.6rem;
+  letter-spacing: -0.02em; color: var(--verde); text-decoration: none;
+}
+.marca img { width: 2.75rem; height: auto; }
+
+.menu { background: var(--verde); }
+.menu ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  padding: 0;
+  margin: 0 auto;
+  overflow: visible;
+  list-style: none;
+}
+
+.menu li { 
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 0.7rem 0.65rem;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: clamp(0.75rem, 0.8vw, var(--t-sm));
+  color: var(--branco);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+}
+.menu a:hover { border-bottom-color: var(--amarelo); color: var(--branco); }
+.menu a[aria-current="page"] { border-bottom-color: var(--amarelo); }
+
+/* 6. HERO (a única peça "memorável": o sol que nasce) ------- */
+.hero { background: var(--verde); color: var(--branco); overflow: hidden; }
+.hero__grade {
+  display: grid; align-items: center; gap: 2rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  padding-block: clamp(2.5rem, 2rem + 4vw, 5.5rem) 0;
+}
+.hero h1 { color: var(--branco); }
+.hero .lead { color: #DCEFE3; }
+.hero__acoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+.hero__cena { align-self: end; }
+.hero__cena svg { width: 100%; }
+.sol { transform-box: fill-box; transform-origin: center bottom; animation: nascer 1.6s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes nascer { from { transform: translateY(45%); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* 7. SEÇÕES DA HOME ---------------------------------------- */
+.motivos { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.motivos dl { margin: 0; }
+.motivos dt { font-family: var(--fonte-titulo); font-weight: 700; font-size: var(--t-lg); color: var(--verde); }
+.motivos dd { margin: 0.2rem 0 0; padding-bottom: 1.25rem; color: var(--texto-suave); }
+.motivos div { padding-top: 1.25rem; border-top: 3px solid var(--amarelo); }
+.motivos div:nth-child(2) { border-top-color: var(--azul); }
+.motivos div:nth-child(3) { border-top-color: var(--laranja); }
+
+.familias { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+.familia { padding: 2rem; border-radius: var(--raio); }
+.familia--renovavel { background: var(--verde-claro); }
+.familia--fossil { background: var(--branco); border: 2px solid var(--borda); }
+.familia h3 { font-size: var(--t-xl); }
+.familia li { padding: 0.55rem 0; border-top: 1px solid var(--borda); }
+.familia li:first-child { border-top: 0; }
+.familia strong { font-family: var(--fonte-titulo); }
+.familia p { margin-top: 1.25rem; }
+
+.mapa { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 2.5rem; background: var(--borda); border: 1px solid var(--borda); border-radius: var(--raio); overflow: hidden; }
+.mapa a {
+  display: grid; grid-template-columns: 2.75rem 1fr; gap: 0.25rem 1rem; align-items: center;
+  padding: 1.25rem; background: var(--branco); color: var(--texto); text-decoration: none;
+}
+.mapa a:hover { background: var(--verde-claro); }
+.mapa svg { grid-row: span 2; width: 2.75rem; height: 2.75rem; padding: 0.6rem; border-radius: 50%; background: var(--c, var(--verde)); color: var(--texto); }
+.mapa strong { font-family: var(--fonte-titulo); font-size: 1.05rem; color: var(--verde); }
+.mapa span { font-size: var(--t-sm); color: var(--texto-suave); line-height: 1.4; }
+
+.publico { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+.publico p { color: #DCEFE3; }
+.publico h3 { color: var(--amarelo); }
+
+.chamada { text-align: center; }
+.chamada p { margin-inline: auto; }
+
+/* 8. FORMULÁRIO (usado em contato.html) -------------------- */
+label { display: block; margin-bottom: 0.3rem; font-weight: 600; }
+input, textarea, select {
+  width: 100%; padding: 0.75rem 0.9rem; margin-bottom: 1.1rem;
+  border: 2px solid var(--borda); border-radius: var(--raio);
+  background: var(--branco); color: var(--texto); font: inherit;
+}
+input:focus, textarea:focus, select:focus { border-color: var(--azul); }
+input:user-invalid, textarea:user-invalid { border-color: #B3261E; }
+
+/* 9. RODAPÉ ------------------------------------------------ */
+.rodape { background: var(--verde-escuro); color: #DCEFE3; padding-block: 3rem 2rem; font-size: var(--t-sm); }
+.rodape a { color: var(--branco); }
+.rodape__grade { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 2rem; }
+.rodape h2 { font-size: 1rem; color: var(--amarelo); letter-spacing: 0; }
+.rodape li { padding: 0.15rem 0; }
+.rodape__logo { width: 9rem; border-radius: var(--raio); background: var(--fundo); padding: 0.5rem; margin-bottom: 1rem; }
+.rodape__fim { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.2); }
+
+/* 10. RESPONSIVO E ACESSIBILIDADE -------------------------- */
+:focus-visible { outline: 3px solid var(--laranja); outline-offset: 3px; }
+.menu :focus-visible, .hero :focus-visible, .secao--verde :focus-visible, .rodape :focus-visible { outline-color: var(--amarelo); }
+
+@media (max-width: 56rem) {
+  .hero__grade, .motivos, .familias, .publico, .rodape__grade { grid-template-columns: 1fr; }
+  .mapa { grid-template-columns: 1fr 1fr; }
+  .hero__cena { max-width: 28rem; }
+}
+@media (max-width: 34rem) {
+  .mapa { grid-template-columns: 1fr; }
+  .cabecalho .botao { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .sol { animation: none; }
+}
+
+/* 11. PÁGINAS INTERNAS (base) ------------------------------- */
+.pagina-topo { background: var(--verde); color: var(--branco); padding-block: clamp(2rem, 1.5rem + 3vw, 4rem); }
+.pagina-topo h1 { color: var(--branco); font-size: var(--t-2xl); margin-bottom: 0.4em; }
+.pagina-topo .lead { color: #DCEFE3; margin-bottom: 0; }
+.migalhas { font-size: var(--t-sm); margin-bottom: 1rem; line-height: 1.4; }
+.migalhas a { color: var(--branco); }
+
+.cartoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.cartao { padding: 1.5rem; background: var(--branco); border: 2px solid var(--borda); border-top: 6px solid var(--c, var(--verde)); border-radius: var(--raio); }
+.cartao h3 { margin-bottom: 0.4em; }
+.cartao p:last-child { margin-bottom: 0; }
+.cartao ul { list-style: disc; padding-left: 1.25rem; }
+.cartao ol { list-style: decimal; padding-left: 1.25rem; margin-bottom: 1em; }
+.cartao li { line-height: 1.7; }
+.cartao--c-solar { --c: var(--amarelo); } .cartao--c-agua { --c: var(--azul); }
+.cartao--c-fossil { --c: var(--laranja); } .cartao--c-verde { --c: var(--verde); }
+
+.rotulo { display: inline-block; padding: 0.1em 0.7em; border-radius: 999px; background: var(--verde-claro); color: var(--verde-escuro); font-size: var(--t-sm); font-weight: 600; line-height: 1.7; }
+.espaco-reservado { padding: 1.25rem; border: 2px dashed var(--borda); border-radius: var(--raio); background: var(--branco); color: var(--texto-suave); }
+
+.dados { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; margin: 2rem 0 0; }
+.dados div { padding: 1.5rem; background: var(--verde-claro); border-left: 6px solid var(--verde); border-radius: var(--raio); }
+.dados dt { font-family: var(--fonte-titulo); font-weight: 700; font-size: var(--t-lg); color: var(--verde); }
+.dados dd { margin: 0.4rem 0 0; line-height: 1.7; }
+.dados strong { font-family: var(--fonte-titulo); color: var(--verde-escuro); }
+.dados__fonte { font-size: var(--t-sm); color: var(--texto-suave); }
+
+.formulario { max-width: 40rem; }
+.formulario fieldset { border: 0; padding: 0; margin: 0 0 1rem; }
+.formulario .ajuda { display: block; margin: -0.8rem 0 1.1rem; font-size: var(--t-sm); color: var(--texto-suave); line-height: 1.5; }
+.resultado { margin-top: 1.5rem; padding: 1.5rem; border-radius: var(--raio); background: var(--verde-claro); border-left: 6px solid var(--verde); }
+.resultado[hidden] { display: none; }
+.resultado strong { font-family: var(--fonte-titulo); font-size: var(--t-xl); color: var(--verde-escuro); }
+.dois-colunas { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+@media (max-width: 56rem) { .dois-colunas { grid-template-columns: 1fr; } }
