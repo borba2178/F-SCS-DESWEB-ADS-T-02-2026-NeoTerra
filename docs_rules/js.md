@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Lógica de manipulação
   }
 });
+```
 
 ## 5. Erros a evitar
 - Não insira scripts diretamente em atributos inline no HTML (como `onclick=""`).
