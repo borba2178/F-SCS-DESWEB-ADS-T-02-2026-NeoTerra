@@ -20,7 +20,7 @@ HTML5 + CSS3 puros, sem frameworks. Páginas localizadas em public/, estruturada
 ## 4. Exemplo
 ```html
 <section aria-labelledby="t-proj"><h2 id="t-proj">
-```[cite: 11]
+```
 
 ## 5. Erros a evitar
 - Não use `<div>` no lugar de header, nav, main e footer.
