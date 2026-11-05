@@ -25,9 +25,9 @@ body {
   padding: 0;
 }
 ```
-## 5.Erros a evitar
+## 5. Erros a evitar
 - Não utilize estilos inline nas marcações HTML.   
 - Não utilize frameworks de CSS (como Bootstrap ou Tailwind).   
 
-##6. Perguntas
+## 6. Perguntas
 Na dúvida sobre classes, cores ou identidade visual, pergunte.   
