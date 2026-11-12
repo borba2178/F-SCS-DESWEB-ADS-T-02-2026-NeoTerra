@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 </head>
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
@@ -35,8 +36,40 @@
         <img src="img/favicon.png" alt="" width="44" height="48">
         NeoTerra
       </a>
-      <a class="botao botao--cta" href="calculadora.html">Testar a Calculadora</a>
+
+       <!-- GRUPO DE AÇÕES DO TOPO -->
+      <div class="cabecalho__acoes-topo">
+        <div class="container-acessibilidade">
+          <button type="button" id="btnAcessibilidade" class="botao-acessibilidade-topo"
+                  aria-label="Abrir painel de acessibilidade"
+                  aria-expanded="false" aria-controls="painelAcessibilidade">
+            A+
+          </button>
+
+          <div id="painelAcessibilidade" class="painel-acessibilidade"
+               role="region" aria-labelledby="titulo-painel-acess">
+            <h3 id="titulo-painel-acess">Painel de Acessibilidade</h3>
+            <div>
+              <span class="painel-rotulo">Tamanho da Fonte:</span>
+              <button type="button" id="btnAumentarFonte">Aumentar Fonte</button>
+              <button type="button" id="btnDiminuirFonte">Diminuir Fonte</button>
+              <button type="button" id="btnResetarFonte">Restaurar Padrão</button>
+            </div>
+            <div>
+              <span class="painel-rotulo">Contraste de Cores:</span>
+              <button type="button" id="btnContraste">Normal</button>
+            </div>
+            <div>
+              <span class="painel-rotulo">Leitor de Tela (Voz):</span>
+              <button type="button" id="btnLeitorVoz" aria-pressed="false">Desativado</button>
+            </div>
+          </div>
+        </div>
+
+        <a class="botao botao--cta" href="calculadora.html">Testar a Calculadora</a>
+      </div>
     </div>
+
     <nav class="menu" aria-label="Principal">
       <ul class="container">
         <li><a href="index.html" aria-current="page">Início</a></li>
@@ -186,6 +219,19 @@
         <p class="lead">Você sabe quantos poluentes você emite?</p>
         <a class="botao botao--cta" href="calculadora.html">Calculadora</a>
       </div>
+
+      <br>
+      
+      <p class="lead">Transição Energética: O maior Desafio da Humanidade</p>
+      <iframe
+        src="https://www.youtube.com/embed/bFaepRmMYc0"
+        title="ODS #7: Transição Energética: O maior Desafio da Humanidade"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; encrypted-media; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+     
     </section>
   </main>
 
@@ -206,7 +252,7 @@
           </ul>
         </div>
         <div>
-          <h2>Fontes de imagens e dados</h2>
+          <h2>Fontes de imagens e dados e dados</h2>
           <ul>
             <li><a href="https://unsplash.com/">Unsplash</a></li>
             <li><a href="https://commons.wikimedia.org/">Wikimedia Commons</a></li>
@@ -219,5 +265,6 @@
       <p class="rodape__fim">© 2026 NeoTerra. Projeto de Desenvolvimento Web (prof. Paulo Fratta) por Pedro Henrique Cardoso Vidal, Gabriel Borba e Marco Antonio Dias Lima.</p>
     </div>
   </footer>
+  <script src="acessi.js"></script>
 </body>
 </html>

@@ -1,22 +1,22 @@
-/* ==========================================================
-   NeoTerra — style.css (folha de estilo padrão do site)
-   Usada por todas as páginas. Seções:
-   1. Tokens  2. Base  3. Layout  4. Botões  5. Cabeçalho
-   6. Hero  7. Seções da home  8. Formulário  9. Rodapé
-   10. Responsivo e acessibilidade
-   ========================================================== */
 
-/* 1. TOKENS ------------------------------------------------ */
+iframe {
+    width: min(100% - 2.5rem, 900px);
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    display: block;
+    margin: 20px auto;
+}
+
 :root {
-  /* Paleta oficial do projeto */
+
   --verde: #176B45;
   --amarelo: #F4C542;
   --laranja: #E98235;
   --azul: #287FB8;
 
-  /* Derivadas (garantem contraste mínimo AA) */
   --verde-escuro: #0E4A30;
-  --azul-texto: #1E6C9E;      /* azul para links em texto pequeno */
+  --azul-texto: #1E6C9E;      
   --verde-claro: #E3F1E6;
   --fundo: #F5F9F3;
   --branco: #FFFFFF;
@@ -24,7 +24,6 @@
   --texto-suave: #4A5C53;
   --borda: #CFE0D4;
 
-  /* Tipografia */
   --fonte-titulo: "Montserrat", "Segoe UI", Arial, sans-serif;
   --fonte-texto: "Open Sans", "Segoe UI", Arial, sans-serif;
 
@@ -35,13 +34,11 @@
   --t-2xl: clamp(2rem, 1.5rem + 2.4vw, 3rem);
   --t-hero: clamp(2.4rem, 1.6rem + 4vw, 4.25rem);
 
-  /* Espaçamento e forma */
   --espaco: clamp(3.5rem, 2.5rem + 5vw, 6.5rem);
   --largura: 72rem;
   --raio: 0.75rem;
 }
 
-/* 2. BASE -------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
@@ -61,6 +58,7 @@ h1, h2, h3 {
   letter-spacing: -0.02em;
   color: var(--verde);
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
 h1 { font-size: var(--t-hero); }
 h2 { font-size: var(--t-2xl); }
@@ -70,7 +68,6 @@ a { color: var(--azul-texto); text-underline-offset: 0.2em; }
 a:hover { color: var(--verde); }
 ul { margin: 0; padding: 0; list-style: none; }
 
-/* 3. LAYOUT ------------------------------------------------ */
 .container { width: min(100% - 2.5rem, var(--largura)); margin-inline: auto; }
 p.container { max-width: none; }
 .secao { padding-block: var(--espaco); }
@@ -79,7 +76,6 @@ p.container { max-width: none; }
 .secao--verde h2 { color: var(--branco); }
 .lead { font-size: var(--t-lg); color: var(--texto-suave); }
 
-/* 4. BOTÕES ------------------------------------------------ */
 .botao {
   display: inline-block;
   padding: 0.85em 1.5em;
@@ -97,7 +93,7 @@ p.container { max-width: none; }
 .botao--contorno { border-color: currentColor; color: var(--branco); }
 .botao--contorno:hover { background: var(--branco); color: var(--verde); }
 
-/* 5. CABEÇALHO --------------------------------------------- */
+
 .pular-conteudo {
   position: absolute; left: 1rem; top: -4rem; z-index: 100;
   padding: 0.6rem 1rem; background: var(--amarelo); color: var(--texto);
@@ -123,13 +119,11 @@ p.container { max-width: none; }
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 0px;
-  padding: 0;
+  gap: 0.2rem; /* Reduz um pouco o espaço entre os itens */
+  padding: 0.2rem 0;
   margin: 0 auto;
-  overflow: visible;
   list-style: none;
 }
-
 .menu li { 
   flex: 0 1 auto;
   min-width: 0;
@@ -137,19 +131,18 @@ p.container { max-width: none; }
 
 .menu a {
   display: block;
-  padding: 0.7rem 0.65rem;
+  padding: 0.6rem 0.45rem; /* Diminui levemente o padding horizontal de cada link */
   font-family: var(--fonte-titulo);
   font-weight: 600;
-  font-size: clamp(0.75rem, 0.8vw, var(--t-sm));
+  font-size: clamp(0.7rem, 0.75vw, 0.85rem); /* Ajusta a fonte dinamicamente para caber */
   color: var(--branco);
   text-decoration: none;
-  white-space: nowrap;
+  white-space: nowrap; /* Impede que o texto de um mesmo link quebre ao meio */
   border-bottom: 3px solid transparent;
 }
 .menu a:hover { border-bottom-color: var(--amarelo); color: var(--branco); }
 .menu a[aria-current="page"] { border-bottom-color: var(--amarelo); }
 
-/* 6. HERO (a única peça "memorável": o sol que nasce) ------- */
 .hero { background: var(--verde); color: var(--branco); overflow: hidden; }
 .hero__grade {
   display: grid; align-items: center; gap: 2rem;
@@ -164,7 +157,7 @@ p.container { max-width: none; }
 .sol { transform-box: fill-box; transform-origin: center bottom; animation: nascer 1.6s cubic-bezier(.2,.7,.2,1) both; }
 @keyframes nascer { from { transform: translateY(45%); opacity: 0; } to { transform: none; opacity: 1; } }
 
-/* 7. SEÇÕES DA HOME ---------------------------------------- */
+
 .motivos { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
 .motivos dl { margin: 0; }
 .motivos dt { font-family: var(--fonte-titulo); font-weight: 700; font-size: var(--t-lg); color: var(--verde); }
@@ -199,8 +192,9 @@ p.container { max-width: none; }
 
 .chamada { text-align: center; }
 .chamada p { margin-inline: auto; }
+.chamada > p { padding-inline: 1.25rem; }
 
-/* 8. FORMULÁRIO (usado em contato.html) -------------------- */
+
 label { display: block; margin-bottom: 0.3rem; font-weight: 600; }
 input, textarea, select {
   width: 100%; padding: 0.75rem 0.9rem; margin-bottom: 1.1rem;
@@ -210,7 +204,7 @@ input, textarea, select {
 input:focus, textarea:focus, select:focus { border-color: var(--azul); }
 input:user-invalid, textarea:user-invalid { border-color: #B3261E; }
 
-/* 9. RODAPÉ ------------------------------------------------ */
+
 .rodape { background: var(--verde-escuro); color: #DCEFE3; padding-block: 3rem 2rem; font-size: var(--t-sm); }
 .rodape a { color: var(--branco); }
 .rodape__grade { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 2rem; }
@@ -219,32 +213,39 @@ input:user-invalid, textarea:user-invalid { border-color: #B3261E; }
 .rodape__logo { width: 9rem; border-radius: var(--raio); background: var(--fundo); padding: 0.5rem; margin-bottom: 1rem; }
 .rodape__fim { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.2); }
 
-/* 10. RESPONSIVO E ACESSIBILIDADE -------------------------- */
+
 :focus-visible { outline: 3px solid var(--laranja); outline-offset: 3px; }
 .menu :focus-visible, .hero :focus-visible, .secao--verde :focus-visible, .rodape :focus-visible { outline-color: var(--amarelo); }
 
 @media (max-width: 56rem) {
   .hero__grade, .motivos, .familias, .publico, .rodape__grade { grid-template-columns: 1fr; }
   .mapa { grid-template-columns: 1fr 1fr; }
-  .hero__cena { max-width: 28rem; }
+  .hero__cena { max-width: 28rem; margin-inline: auto; }
+  .menu a { font-size: var(--t-sm); padding: 0.8rem 0.9rem; }
 }
 @media (max-width: 34rem) {
+  body { line-height: 1.8; }
   .mapa { grid-template-columns: 1fr; }
   .cabecalho .botao { display: none; }
+  .marca { font-size: 1.35rem; }
+  .menu ul { display: grid; grid-template-columns: 1fr 1fr; }
+  .menu a { white-space: normal; text-align: center; padding: 0.85rem 0.5rem; }
+  .hero__acoes .botao { width: 100%; text-align: center; }
+  .familia { padding: 1.25rem; }
+  .cartao, .dados div, .resultado { padding: 1.25rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .sol { animation: none; }
 }
 
-/* 11. PÁGINAS INTERNAS (base) ------------------------------- */
 .pagina-topo { background: var(--verde); color: var(--branco); padding-block: clamp(2rem, 1.5rem + 3vw, 4rem); }
 .pagina-topo h1 { color: var(--branco); font-size: var(--t-2xl); margin-bottom: 0.4em; }
 .pagina-topo .lead { color: #DCEFE3; margin-bottom: 0; }
 .migalhas { font-size: var(--t-sm); margin-bottom: 1rem; line-height: 1.4; }
 .migalhas a { color: var(--branco); }
 
-.cartoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.cartoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr)); gap: 1.5rem; margin-top: 2rem; }
 .cartao { padding: 1.5rem; background: var(--branco); border: 2px solid var(--borda); border-top: 6px solid var(--c, var(--verde)); border-radius: var(--raio); }
 .cartao h3 { margin-bottom: 0.4em; }
 .cartao p:last-child { margin-bottom: 0; }
@@ -257,7 +258,7 @@ input:user-invalid, textarea:user-invalid { border-color: #B3261E; }
 .rotulo { display: inline-block; padding: 0.1em 0.7em; border-radius: 999px; background: var(--verde-claro); color: var(--verde-escuro); font-size: var(--t-sm); font-weight: 600; line-height: 1.7; }
 .espaco-reservado { padding: 1.25rem; border: 2px dashed var(--borda); border-radius: var(--raio); background: var(--branco); color: var(--texto-suave); }
 
-.dados { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; margin: 2rem 0 0; }
+.dados { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr)); gap: 1.5rem; margin: 2rem 0 0; }
 .dados div { padding: 1.5rem; background: var(--verde-claro); border-left: 6px solid var(--verde); border-radius: var(--raio); }
 .dados dt { font-family: var(--fonte-titulo); font-weight: 700; font-size: var(--t-lg); color: var(--verde); }
 .dados dd { margin: 0.4rem 0 0; line-height: 1.7; }
@@ -272,3 +273,283 @@ input:user-invalid, textarea:user-invalid { border-color: #B3261E; }
 .resultado strong { font-family: var(--fonte-titulo); font-size: var(--t-xl); color: var(--verde-escuro); }
 .dois-colunas { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
 @media (max-width: 56rem) { .dois-colunas { grid-template-columns: 1fr; } }
+
+/* ==========================================================
+   SUPLEMENTO DE ACESSIBILIDADE (Integrado ao Cabeçalho)
+   ========================================================== */
+
+.cabecalho__acoes-topo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container-acessibilidade {
+  position: relative;
+  display: inline-block;
+}
+
+.botao-acessibilidade-topo {
+  background: var(--verde);
+  color: var(--branco);
+  border: 2px solid var(--amarelo);
+  border-radius: 50%; /* Deixa o botão perfeitamente circular */
+  width: 48px;        /* Largura fixa para garantir formato de círculo */
+  height: 48px;       /* Altura igual à largura */
+  padding: 0;         /* Zera o padding para o conteúdo centralizar */
+  font-weight: 700;
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem; /* Aumenta o tamanho da letra (A+) */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza perfeitamente o texto A+ no meio */
+  transition: background 0.2s, color 0.2s;
+}
+
+.botao-acessibilidade-topo:hover {
+  background: var(--amarelo);
+  color: var(--texto);
+}
+
+.painel-acessibilidade {
+  display: none;
+  position: absolute;
+  top: 130%;
+  right: 0;
+  background: var(--branco);
+  color: var(--texto);
+  border: 2px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 1.25rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  width: 260px;
+}
+
+.painel-acessibilidade.ativo {
+  display: block;
+}
+
+.painel-acessibilidade h3 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--verde);
+}
+
+.painel-acessibilidade div {
+  margin-bottom: 0.7rem;
+}
+
+.painel-rotulo {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--texto);
+}
+
+.painel-acessibilidade button {
+  width: 100%;
+  padding: 0.45rem;
+  margin-bottom: 0.3rem;
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--fonte-texto);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--texto);
+}
+
+.painel-acessibilidade button:hover {
+  background: var(--verde-claro);
+  border-color: var(--verde);
+}
+
+/* Modos de Contraste */
+/* ===== Baixo contraste: tons suaves, sem brilho forte ===== */
+body.baixo-contraste {
+  background: #EEEAE0 !important;
+  color: #2E2E2E !important;
+}
+
+/* Todas as áreas de fundo viram tons neutros e quentes */
+body.baixo-contraste .cabecalho,
+body.baixo-contraste .secao,
+body.baixo-contraste .secao--branca,
+body.baixo-contraste .chamada,
+body.baixo-contraste .cartao,
+body.baixo-contraste .familia,
+body.baixo-contraste .mapa a,
+body.baixo-contraste .dados div,
+body.baixo-contraste .resultado,
+body.baixo-contraste .espaco-reservado,
+body.baixo-contraste input,
+body.baixo-contraste textarea,
+body.baixo-contraste select {
+  background: #E6E1D4 !important;
+  color: #2E2E2E !important;
+  border-color: #B8B09C !important;
+}
+
+/* Faixas que eram verdes: bege um pouco mais escuro */
+body.baixo-contraste .menu,
+body.baixo-contraste .hero,
+body.baixo-contraste .pagina-topo,
+body.baixo-contraste .secao--verde,
+body.baixo-contraste .rodape {
+  background: #D9D3C3 !important;
+  color: #2E2E2E !important;
+}
+
+/* Textos */
+body.baixo-contraste h1,
+body.baixo-contraste h2,
+body.baixo-contraste h3,
+body.baixo-contraste strong,
+body.baixo-contraste p,
+body.baixo-contraste li,
+body.baixo-contraste dt,
+body.baixo-contraste dd,
+body.baixo-contraste span,
+body.baixo-contraste .lead,
+body.baixo-contraste .marca,
+body.baixo-contraste .menu a,
+body.baixo-contraste .rodape h2,
+body.baixo-contraste .rodape a,
+body.baixo-contraste .migalhas a,
+body.baixo-contraste .painel-rotulo {
+  color: #2E2E2E !important;
+}
+
+/* Links de texto */
+body.baixo-contraste a:not(.botao):not(.marca):not(.menu a) {
+  color: #1F4E8C !important;
+  text-decoration: underline !important;
+}
+
+/* Botões */
+body.baixo-contraste .botao,
+body.baixo-contraste .botao-acessibilidade-topo {
+  background: #CFC3A3 !important;
+  color: #2E2E2E !important;
+  border: 2px solid #8C826B !important;
+}
+
+/* Painel de acessibilidade */
+body.baixo-contraste .painel-acessibilidade {
+  background: #EEEAE0 !important;
+  border-color: #B8B09C !important;
+}
+body.baixo-contraste .painel-acessibilidade button {
+  background: #E6E1D4 !important;
+  color: #2E2E2E !important;
+  border-color: #B8B09C !important;
+}
+
+/* Ícones do mapa do site */
+body.baixo-contraste .mapa svg {
+  background: #CFC3A3 !important;
+  color: #2E2E2E !important;
+}
+
+/* Desliga o brilho de imagens e vídeo um pouco */
+body.baixo-contraste img,
+body.baixo-contraste iframe {
+  filter: brightness(0.92);
+}
+
+body.alto-contraste {
+  background: #000000 !important;
+  color: #ffff00 !important;
+}
+body.alto-contraste a {
+  color: #00ffff !important;
+  text-decoration: underline !important;
+}
+body.alto-contraste .cabecalho, 
+body.alto-contraste .menu, 
+body.alto-contraste .rodape,
+body.alto-contraste .secao,
+body.alto-contraste .cartao,
+body.alto-contraste .familia {
+  background: #000000 !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+}
+body.alto-contraste h1, 
+body.alto-contraste h2, 
+body.alto-contraste h3,
+body.alto-contraste strong {
+  color: #ffff00 !important;
+}
+/* Texto só para leitores de tela */
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Botão de voz ativado (substitui o estilo inline que o JS aplicava) */
+.painel-acessibilidade button[aria-pressed="true"] {
+  background: #c6f6d5;
+  border-color: #38a169;
+}
+
+/* ===== Alto contraste: tudo preto, texto e bordas amarelos ===== */
+body.alto-contraste .pagina-topo,
+body.alto-contraste .hero,
+body.alto-contraste .secao--verde,
+body.alto-contraste .secao--branca,
+body.alto-contraste .chamada {
+  background: #000 !important;
+  color: #ff0 !important;
+  border: 0 !important;
+}
+
+body.alto-contraste .mapa a,
+body.alto-contraste .dados div,
+body.alto-contraste .resultado,
+body.alto-contraste .espaco-reservado,
+body.alto-contraste .botao,
+body.alto-contraste .botao-acessibilidade-topo,
+body.alto-contraste .painel-acessibilidade,
+body.alto-contraste .painel-acessibilidade button,
+body.alto-contraste input,
+body.alto-contraste textarea,
+body.alto-contraste select {
+  background: #000 !important;
+  color: #ff0 !important;
+  border: 2px solid #ff0 !important;
+}
+
+body.alto-contraste .painel-acessibilidade button[aria-pressed="true"] {
+  background: #ff0 !important;
+  color: #000 !important;
+}
+
+body.alto-contraste p,
+body.alto-contraste li,
+body.alto-contraste dt,
+body.alto-contraste dd,
+body.alto-contraste span,
+body.alto-contraste .lead,
+body.alto-contraste .painel-rotulo,
+body.alto-contraste .painel-acessibilidade h3,
+body.alto-contraste .rodape h2 {
+  color: #ff0 !important;
+}
+
+/* Links que são botões ficam amarelos, não ciano */
+body.alto-contraste a.botao { color: #ff0 !important; }
+
+body.alto-contraste .mapa svg {
+  background: #000 !important;
+  color: #ff0 !important;
+  border: 2px solid #ff0;
+}
