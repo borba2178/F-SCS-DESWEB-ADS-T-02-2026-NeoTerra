@@ -461,29 +461,51 @@ body.baixo-contraste iframe {
   filter: brightness(0.92);
 }
 
-body.alto-contraste {
-  background: #000000 !important;
-  color: #ffff00 !important;
+/* ===== Alto contraste: tudo preto, texto e bordas amarelos ===== */
+body.alto-contraste,
+body.alto-contraste * {
+  background-color: #000 !important;
+  background-image: none !important;
+  color: #ff0 !important;
+  border-color: #ff0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
-body.alto-contraste a {
-  color: #00ffff !important;
+
+/* Links em ciano e sublinhados, para se distinguirem do texto */
+body.alto-contraste a,
+body.alto-contraste a * {
+  color: #0ff !important;
   text-decoration: underline !important;
 }
-body.alto-contraste .cabecalho, 
-body.alto-contraste .menu, 
-body.alto-contraste .rodape,
-body.alto-contraste .secao,
-body.alto-contraste .cartao,
-body.alto-contraste .familia {
-  background: #000000 !important;
-  color: #ffff00 !important;
-  border-color: #ffff00 !important;
+
+/* Botões que são links: amarelo, com moldura */
+body.alto-contraste a.botao {
+  color: #ff0 !important;
+  border: 2px solid #ff0 !important;
+  text-decoration: none !important;
 }
-body.alto-contraste h1, 
-body.alto-contraste h2, 
-body.alto-contraste h3,
-body.alto-contraste strong {
-  color: #ffff00 !important;
+
+/* Botões, campos e pílulas ganham moldura visível */
+body.alto-contraste button,
+body.alto-contraste input,
+body.alto-contraste textarea,
+body.alto-contraste select,
+body.alto-contraste .rotulo,
+body.alto-contraste .painel-acessibilidade {
+  border: 2px solid #ff0 !important;
+}
+
+/* Botão ligado no painel: invertido, para ver o estado */
+body.alto-contraste .painel-acessibilidade button[aria-pressed="true"] {
+  background-color: #ff0 !important;
+  color: #000 !important;
+}
+
+/* Foco bem visível */
+body.alto-contraste :focus-visible {
+  outline: 3px solid #0ff !important;
+  outline-offset: 3px;
 }
 /* Texto só para leitores de tela */
 .so-leitor {
